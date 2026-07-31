@@ -102,6 +102,35 @@ button {
 }
 
 /* ==========================================================================
+   Photo-edge fades — soften the seam where a full-bleed photo meets a
+   flat-color section, without touching flat-color-to-flat-color seams
+   (those stay sharp/architectural, matching the original brand mockup).
+   ========================================================================== */
+.fade-edge {
+  position: relative;
+}
+
+.fade-edge::before,
+.fade-edge::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: clamp(48px, 10vh, 130px);
+  pointer-events: none;
+}
+
+.fade-edge--top::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--color-bg), transparent);
+}
+
+.fade-edge--bottom::after {
+  bottom: 0;
+  background: linear-gradient(to top, var(--color-bg), transparent);
+}
+
+/* ==========================================================================
    Nav
    ========================================================================== */
 .nav {
