@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOUGE — Locally made, with love</title>
+<meta name="description" content="Small-batch natural soap crafted from quality organic ingredients. Join the founders list for 20% off your first 10 bars.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=DM+Serif+Display:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__links nav__links--left">
+    <a href="#soap">Soap</a>
+    <a href="#story">Story</a>
+  </div>
+  <div class="nav__wordmark">BOUGE</div>
+  <div class="nav__links nav__links--right">
+    <a href="#wholesale">Wholesale</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <img class="hero__img" src="assets/images/hero.jpg" alt="BOUGE soaps arranged on white fabric">
+  <div class="hero__overlay"></div>
+  <div class="hero__content">
+    <h1 class="hero__headline">Luxury doesn't<br>have to shout.</h1>
+    <div class="hero__tagline">It simply has to be felt.</div>
+    <div class="hero__label">All natural &middot; Organic &middot; Small batch</div>
+    <p class="hero__body">Small-batch natural soap crafted from quality organic ingredients, right here at home.</p>
+
+    <form class="signup-form" novalidate>
+      <input class="signup-form__input" type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+      <button class="signup-form__button" type="submit">Join</button>
+    </form>
+    <div class="signup-form__note">Join the founders mailing list for 20% off your first 10 bars.</div>
+    <div class="signup-form__error">Something went wrong — please try again.</div>
+  </div>
+</div>
+
+<!-- STORY QUOTE -->
+<div class="story" id="story">
+  <div class="story__text reveal">
+    <div class="story__label">Our story</div>
+    <p class="story__quote">Some things in life deserve to be made well. BOUGE began with a simple search for a beautiful bar of soap: luxurious without being extravagant, crafted with care, and a pleasure to reach for every day.</p>
+  </div>
+  <div class="story__media reveal reveal--delay-1">
+    <img src="assets/images/story.jpg" alt="BOUGE soaps">
+  </div>
+</div>
+
+<!-- FOUNDER SECTION -->
+<div class="founder">
+  <div class="founder__media reveal">
+    <!-- PLACEHOLDER: swap this div for <img src="assets/images/jill.jpg" alt="Jill, founder of BOUGE" class="..."> once the founder photo/video is supplied -->
+    <div class="founder__placeholder-label">Portrait or video<br>of Jill — the maker</div>
+  </div>
+  <div class="founder__text reveal reveal--delay-1">
+    <div class="founder__label">The maker</div>
+    <h2 class="founder__heading">I'm Jill.</h2>
+    <div class="founder__subtitle">Founder &amp; soap maker</div>
+    <p class="founder__paragraph">BOUGE began with a simple search for a beautiful bar of soap, one that felt luxurious without being extravagant, crafted with care, and a pleasure to reach for every day. When I couldn't find exactly what I was looking for, I began learning how to make it myself.</p>
+    <p class="founder__paragraph">What started as curiosity quickly became a quiet obsession. Every recipe refined, every ingredient carefully chosen, every detail considered, from the feel of the lather to the weight of each bar, to the way it rests in your hand.</p>
+    <div class="founder__pull-quote">
+      <p class="founder__pull-quote-text">"I believe everyday objects can elevate everyday moments."</p>
+      <div class="founder__pull-quote-attribution">Jill, founder of BOUGE</div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGE BREAK -->
+<div class="image-break reveal">
+  <img src="assets/images/image-break.jpg" alt="BOUGE soap stack">
+</div>
+
+<!-- PRODUCT GRID — placeholder Buy Now buttons, wire to Stripe Payment Links -->
+<div class="products" id="soap">
+
+  <!-- PLACEHOLDER PRODUCT CARD 1 — replace data-stripe-link with a real Stripe Payment Link URL -->
+  <div class="product-card reveal">
+    <div class="product-card__media">
+      <img class="product-card__img" src="assets/images/product-charcoal.jpg" alt="BOUGE No.1 Charcoal soap bar">
+    </div>
+    <div class="product-card__name">No. 1 &middot; Charcoal</div>
+    <div class="product-card__subtitle">Activated charcoal &middot; amber &middot; sea mineral</div>
+    <a class="product-card__buy" href="#" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Buy Now</a>
+    <span class="product-card__placeholder-tag">Placeholder — link to Stripe</span>
+  </div>
+
+  <!-- PLACEHOLDER PRODUCT CARD 2 — replace data-stripe-link with a real Stripe Payment Link URL -->
+  <div class="product-card reveal reveal--delay-1">
+    <div class="product-card__media">
+      <img class="product-card__img" src="assets/images/product-rose-clay.jpg" alt="BOUGE No.2 Rose Clay soap bar">
+    </div>
+    <div class="product-card__name">No. 2 &middot; Rose Clay</div>
+    <div class="product-card__subtitle">Rose clay &middot; organic shea &middot; calendula</div>
+    <a class="product-card__buy" href="#" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Buy Now</a>
+    <span class="product-card__placeholder-tag">Placeholder — link to Stripe</span>
+  </div>
+
+  <!-- PLACEHOLDER PRODUCT CARD 3 — replace data-stripe-link with a real Stripe Payment Link URL -->
+  <div class="product-card reveal reveal--delay-2">
+    <div class="product-card__media">
+      <img class="product-card__img" src="assets/images/product-ivory.jpg" alt="BOUGE No.3 Ivory soap bar">
+    </div>
+    <div class="product-card__name">No. 3 &middot; Ivory</div>
+    <div class="product-card__subtitle">Pure castile &middot; cold-pressed olive &middot; oat</div>
+    <a class="product-card__buy" href="#" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Buy Now</a>
+    <span class="product-card__placeholder-tag">Placeholder — link to Stripe</span>
+  </div>
+
+</div>
+
+<!-- VALUES ROW -->
+<div class="values">
+  <div class="value-cell reveal">
+    <div class="value-cell__name">All Natural</div>
+    <div class="value-cell__sub">No synthetics</div>
+  </div>
+  <div class="value-cell reveal reveal--delay-1">
+    <div class="value-cell__name">Organic</div>
+    <div class="value-cell__sub">Certified ingredients</div>
+  </div>
+  <div class="value-cell reveal reveal--delay-2">
+    <div class="value-cell__name">Small Batch</div>
+    <div class="value-cell__sub">Made by hand</div>
+  </div>
+  <div class="value-cell reveal reveal--delay-3">
+    <div class="value-cell__name">Local</div>
+    <div class="value-cell__sub">Grown right here</div>
+  </div>
+</div>
+
+<!-- WHOLESALE + EMAIL CTA -->
+<div class="cta" id="wholesale">
+  <img class="cta__bg" src="assets/images/wholesale-bg.jpg" alt="BOUGE soaps">
+  <div class="cta__overlay"></div>
+  <div class="cta__inner reveal">
+    <div class="cta__label">Wholesale &amp; partnerships</div>
+    <h2 class="cta__heading">Handcrafted in small batches, in Canada.</h2>
+    <p class="cta__body">Are you interested in carrying BOUGE in your retail location? Join the list and we'll be in touch as BOUGE grows.</p>
+
+    <form class="signup-form signup-form--cta" novalidate>
+      <input class="signup-form__input" type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
+      <button class="signup-form__button" type="submit">Join</button>
+    </form>
+    <div class="signup-form__note signup-form__note--center">Join the founders mailing list for 20% off your first 10 bars.</div>
+    <div class="signup-form__error">Something went wrong — please try again.</div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <span class="footer__wordmark">BOUGE</span>
+  <span class="footer__note">Locally made, with love &nbsp;&middot;&nbsp; @bougesoap</span>
+</footer>
+
+<script src="scripts/main.js"></script>
+</body>
+</html>
