@@ -24,16 +24,7 @@ async function subscribeToKlaviyo(email) {
             profile: {
               data: {
                 type: 'profile',
-                attributes: {
-                  email,
-                  subscriptions: {
-                    email: {
-                      marketing: {
-                        consent: 'SUBSCRIBED',
-                      },
-                    },
-                  },
-                },
+                attributes: { email },
               },
             },
           },
