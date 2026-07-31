@@ -20,10 +20,20 @@ async function subscribeToKlaviyo(email) {
         data: {
           type: 'subscription',
           attributes: {
+            custom_source: 'BOUGE website signup',
             profile: {
               data: {
                 type: 'profile',
-                attributes: { email },
+                attributes: {
+                  email,
+                  subscriptions: {
+                    email: {
+                      marketing: {
+                        consent: 'SUBSCRIBED',
+                      },
+                    },
+                  },
+                },
               },
             },
           },
