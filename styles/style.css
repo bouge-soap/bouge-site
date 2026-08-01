@@ -648,6 +648,7 @@ button {
 }
 
 .product-card__media {
+  position: relative;
   overflow: hidden;
   margin-bottom: 22px;
 }
@@ -657,11 +658,46 @@ button {
   aspect-ratio: 1;
   object-fit: cover;
   margin-bottom: 0;
-  transition: transform 800ms var(--ease-elegant);
+  transition: transform 800ms var(--ease-elegant), filter 400ms var(--ease-smooth), opacity 400ms var(--ease-smooth);
 }
 
 .product-card:hover .product-card__img {
   transform: scale(1.045);
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 7px 16px;
+  background: rgba(28, 40, 48, 0.88);
+  color: var(--color-bg);
+  font-size: 9.5px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  border-radius: var(--radius-pill);
+  display: none;
+}
+
+/* Coming-soon state — remove the `coming-soon` class on .products (and
+   swap .product-card__buy back to a real <a href> with the Stripe link)
+   once real photos + Stripe links are ready. */
+.products.coming-soon .product-card__img {
+  filter: grayscale(90%);
+  opacity: 0.55;
+}
+
+.products.coming-soon .product-card__badge {
+  display: inline-block;
+}
+
+.products.coming-soon .product-card:hover {
+  box-shadow: none;
+  transform: none;
+}
+
+.products.coming-soon .product-card:hover .product-card__img {
+  transform: none;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -712,14 +748,17 @@ button {
   box-shadow: 0 12px 22px -8px rgba(212, 146, 46, 0.45);
 }
 
-.product-card__placeholder-tag {
-  display: block;
-  font-size: 9.5px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--color-amber);
-  margin-top: 8px;
-  font-family: ui-monospace, Menlo, monospace;
+.products.coming-soon .product-card__buy {
+  background: rgba(28, 40, 48, 0.12);
+  color: rgba(28, 40, 48, 0.4);
+  cursor: default;
+  pointer-events: none;
+}
+
+.products.coming-soon .product-card__buy:hover {
+  background: rgba(28, 40, 48, 0.12);
+  transform: none;
+  box-shadow: none;
 }
 
 @media (min-width: 700px) {
