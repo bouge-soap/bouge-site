@@ -145,8 +145,16 @@ the `href` and `data-stripe-link` attribute on each card to the real Stripe
 Payment Link URL.
 
 ## Founder section
-`.founder__media` in `index.html` is still a placeholder (styled div, no
-image) — swap for an `<img>`/`<video>` once Jill's photo/video is supplied.
+The photo/video column (`.founder__media`) was **removed entirely** (not
+just hidden) as of 2026-08-01, since the site went live before Jill's
+portrait was ready and a visible dev-placeholder wasn't acceptable to ship.
+`.founder` is now a single centered text column (`.founder__text`,
+max-width 640px) instead of a 2-column grid. To bring the photo back later:
+re-add a `.founder__media` block before `.founder__text` in `index.html`
+and restore the 2-column grid + media styles from git history (see the
+commit that removed this, or `--color-founder-placeholder` token still
+defined in `style.css` for reference) — don't just re-add a placeholder div
+again, wait until there's a real image/video to use.
 
 ## Design system notes
 - Design tokens (colors, fonts, spacing) live as CSS custom properties at
