@@ -2,6 +2,18 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Status as of 2026-07-31 (end of session)
+- Site is live at `bouge-site.vercel.app`, everything below is committed and
+  pushed to `main` — nothing uncommitted left hanging.
+- Signup forms (hero + wholesale CTA) are confirmed working end-to-end:
+  submits → Klaviyo list → Welcome Flow. Verified live by owner.
+- Known open issues, not code bugs, just real-world setup still pending:
+  domain not registered (`bougesoap.xyz`), Klaviyo sender still an
+  unauthenticated Gmail address (spam risk), Stripe product links are
+  placeholders, founder photo/video not supplied yet.
+- Owner said "new changes soon" when logging off — check in on what those
+  are rather than assuming; nothing specific was queued at end of session.
+
 ## Contact / Brand
 - Instagram: @bougesoap
 - Email: bougesoap.xyz@gmail.com
@@ -87,3 +99,24 @@ Payment Link URL.
 ## Founder section
 `.founder__media` in `index.html` is still a placeholder (styled div, no
 image) — swap for an `<img>`/`<video>` once Jill's photo/video is supplied.
+
+## Design system notes
+- Design tokens (colors, fonts, spacing) live as CSS custom properties at
+  the top of `styles/style.css` — match these exactly rather than
+  hardcoding new values.
+- Intentional brand language: sharp/architectural flat-color blocking
+  between sections (no border-radius except pill buttons/inputs). Don't
+  soften flat-color-to-flat-color seams (e.g. founder placeholder into its
+  cream text panel) — that's deliberate, from the original hi-fi mockup.
+- `.fade-edge` / `.fade-edge--top` / `.fade-edge--bottom` utility classes
+  (added 2026-07-31) apply a soft gradient fade specifically where a
+  full-bleed *photo* meets a flat-color section — currently used on the
+  hero bottom, story image (both edges), and image-break section (both
+  edges). This was a deliberate scope decision: photo edges get softened,
+  flat-color seams stay sharp. Apply the same logic to any new full-bleed
+  photo sections added later, rather than blending everything by default.
+- `.reveal` class + `scripts/main.js` IntersectionObserver handles
+  scroll-triggered fade/lift-in animation; hero has its own load-triggered
+  entrance (`.hero__content.is-loaded`). Both respect
+  `prefers-reduced-motion`. Keep new sections consistent with this instead
+  of introducing a different animation approach.
