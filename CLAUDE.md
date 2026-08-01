@@ -8,19 +8,18 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 - Signup forms (hero + wholesale CTA) are confirmed working end-to-end:
   submits → Klaviyo list → Welcome Flow. Verified live by owner.
 - Known open issues, not code bugs, just real-world setup still pending:
-  domain not registered (`bougesoap.xyz`), Klaviyo sender still an
-  unauthenticated Gmail address (spam risk), Stripe product links are
-  placeholders, founder photo/video not supplied yet.
+  Klaviyo sender still an unauthenticated Gmail address (spam risk), Stripe
+  product links are placeholders, founder photo/video not supplied yet.
 - Owner said "new changes soon" when logging off — check in on what those
   are rather than assuming; nothing specific was queued at end of session.
 
 ## Contact / Brand
 - Instagram: @bougesoap
-- Email: bougesoap.xyz@gmail.com
-- Domain `bougesoap.xyz` (not `.com`) — not registered yet. The "Shop BOUGE"
-  button in the welcome email intentionally links to `https://bougesoap.xyz`
-  already; leave it as-is until the domain is live (don't "fix" it to the
-  Vercel URL).
+- Email: bouge.xyz@gmail.com
+- Domain `bouge.xyz` — registered at GoDaddy. Not yet pointed at Vercel or
+  used for email; site is still on `bouge-site.vercel.app` and Klaviyo's
+  sender is still a Gmail address. The "Shop BOUGE" button in the welcome
+  email links to `https://bouge.xyz` already, correctly.
 
 ## Deployment
 - Site: static HTML/CSS/JS, no framework, no build step (see README in
@@ -58,11 +57,36 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 - Promo code `WELCOME20` in that email is a placeholder — owner will create
   the real discount code in Stripe when Stripe product setup happens (see
   below), so don't treat it as final/live yet.
-- Sender is `bouge.xyz@gmail.com` (a free Gmail address, not on the
-  `bougesoap.xyz` domain) — sends currently land in spam. Real fix requires
-  registering `bougesoap.xyz` and setting up domain authentication (SPF/DKIM)
-  in Klaviyo Settings → Domains, then switching the sender to an address on
-  that domain. Until then, expect deliverability problems on any real send.
+- Sender is `bouge.xyz@gmail.com` — note this is a **Gmail address** (domain
+  is `gmail.com`, the "bouge.xyz" is just text in the username), NOT an
+  address on the actual `bouge.xyz` domain. Real fix requires domain
+  authentication (SPF/DKIM) in Klaviyo Settings → Domains, AND switching the
+  sender to a real address on `bouge.xyz` (e.g. `hello@bouge.xyz`). Until
+  both are done, expect deliverability problems on any real send.
+
+### Email setup plan (in progress as of 2026-08-01)
+Owner doesn't want to pay for email hosting yet, so the plan is:
+1. Create a free Cloudflare account, add `bouge.xyz` to it
+2. Update nameservers at GoDaddy to point to Cloudflare (domain stays
+   registered at GoDaddy — only DNS management moves). Low risk to do now
+   since nothing is live on this domain yet (site's still on the Vercel
+   URL, no email currently flowing through it).
+3. Set up Cloudflare Email Routing (free, unlimited forwarding addresses) —
+   `hello@bouge.xyz` (or similar) forwards to the owner's existing Gmail.
+   No new inbox to check, no cost.
+4. Add Klaviyo's SPF/DKIM records in Cloudflare DNS, complete domain
+   authentication in Klaviyo Settings → Domains
+5. Switch Klaviyo's sender address to the real `@bouge.xyz` address
+
+**Future migration to Google Workspace** (if/when owner wants a paid, real
+mailbox instead of forwarding): easy, no lock-in. Cloudflare Email Routing
+is pure forwarding, not mail storage, so there's nothing to migrate — just
+swap Cloudflare's forwarding MX record for Google Workspace's MX record,
+add Google's verification TXT + DKIM, done in ~10-15 min. One real gotcha:
+**a domain can only have one SPF TXT record** — when Google gets added
+later, its SPF include must be merged into the *same* record as Klaviyo's
+(e.g. `v=spf1 include:_spf.google.com include:_spf.klaviyo.com ~all`), not
+added as a second separate TXT record, or SPF breaks for both.
 
 ## Compliance: avoid unsubstantiated "organic" claims
 Per outside legal/marketing advice the owner received (ChatGPT-sourced, but
