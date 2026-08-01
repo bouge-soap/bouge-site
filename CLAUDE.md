@@ -2,16 +2,34 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
-## Status as of 2026-07-31 (end of session)
-- Site is live at `bouge-site.vercel.app`, everything below is committed and
-  pushed to `main` — nothing uncommitted left hanging.
-- Signup forms (hero + wholesale CTA) are confirmed working end-to-end:
-  submits → Klaviyo list → Welcome Flow. Verified live by owner.
-- Known open issues, not code bugs, just real-world setup still pending:
-  Klaviyo sender still an unauthenticated Gmail address (spam risk), Stripe
-  product links are placeholders, founder photo/video not supplied yet.
-- Owner said "new changes soon" when logging off — check in on what those
-  are rather than assuming; nothing specific was queued at end of session.
+## Status as of 2026-08-01 (end of session)
+- **Site is live at the real domain: `https://bouge.xyz`** (not just the
+  Vercel URL anymore — domain connected, DNS + SSL confirmed working,
+  valid Let's Encrypt cert). `bouge-site.vercel.app` still works too and
+  will keep working indefinitely (Vercel doesn't kill it once a custom
+  domain is added), but treat `bouge.xyz` as canonical going forward.
+- Everything is committed and pushed to `main` — nothing uncommitted left
+  hanging.
+- Email is fully working: signup forms → Klaviyo list → Welcome Flow →
+  authenticated `hello@bouge.xyz` sender (no more Gmail spam-risk sender).
+  Domain auth (SPF/DKIM), Cloudflare Email Routing, and Klaviyo's branded
+  sending domain are all done — see the Klaviyo section below for details
+  if any of this needs revisiting.
+- **Product section is hidden entirely** (`section-hidden` class) — owner
+  decided not to even tease "coming soon" for now. Nav's "Soap" link is
+  also removed to match. See "Pending: Stripe product links" section below
+  for exactly how to bring it back.
+- **No discount/promo code anywhere** (site or welcome email) — this was
+  deliberately removed 2026-08-01 per Jill's decision. Don't reintroduce
+  without being asked again.
+- Today's session was mostly rapid small copy tweaks directly from Jill's
+  feedback (relayed by the owner) — expect more of these. Pattern so far:
+  owner describes what Jill wants changed, I locate + edit + confirm
+  diff, owner says push, I push and verify live via curl. Keep that loop
+  tight and fast rather than over-explaining each change.
+- Founder photo/video still not supplied — founder section stays
+  text-only until then (see "Founder section" below, do NOT re-add a
+  placeholder div, wait for the real asset).
 
 ## Contact / Brand
 - Instagram: @bougesoap
