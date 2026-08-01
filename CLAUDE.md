@@ -57,34 +57,50 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 - Promo code `WELCOME20` in that email is a placeholder — owner will create
   the real discount code in Stripe when Stripe product setup happens (see
   below), so don't treat it as final/live yet.
-- Sender is `bouge.xyz@gmail.com` — note this is a **Gmail address** (domain
-  is `gmail.com`, the "bouge.xyz" is just text in the username), NOT an
-  address on the actual `bouge.xyz` domain. Real fix requires domain
-  authentication (SPF/DKIM) in Klaviyo Settings → Domains, AND switching the
-  sender to a real address on `bouge.xyz` (e.g. `hello@bouge.xyz`). Until
-  both are done, expect deliverability problems on any real send.
+- ✅ Sender is now `hello@bouge.xyz` (real domain address, set at the list
+  level: Lists & Segments → "Website Contact Form" → Settings → Details →
+  unchecked "Use account default"). Domain authentication is fully done —
+  see the completed email setup plan below. No longer expect the old
+  Gmail-sender spam problem; worth a real end-to-end test (submit the site
+  form, confirm the welcome email lands in inbox, not spam) to be sure.
 
 ### Email setup plan (in progress as of 2026-08-01)
 Owner doesn't want to pay for email hosting yet, so the plan is:
 1. ✅ Create a free Cloudflare account, add `bouge.xyz` to it — done
 2. ✅ Update nameservers at GoDaddy to point to Cloudflare (was
    `ns49`/`ns50.domaincontrol.com`, now `itzel.ns.cloudflare.com` +
-   `vasilii.ns.cloudflare.com`) — done, **waiting on propagation** (can take
-   up to 24h, Cloudflare emails owner when active). Domain stays registered
-   at GoDaddy, only DNS management moved.
+   `vasilii.ns.cloudflare.com`) — done, propagated within minutes (confirmed
+   via `dig @1.1.1.1`/`@8.8.8.8`). Domain stays registered at GoDaddy, only
+   DNS management moved.
    - GoDaddy's default parked-domain DNS records (A records to a
      WebsiteBuilder placeholder, `www` CNAME, `_domainconnect` CNAME) were
      imported into Cloudflare as-is, untouched — not in use, harmless to
      leave. An existing `_dmarc` TXT record (`v=DMARC1; p=quarantine;
      adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;`) was also
-     imported — useful to keep for the email authentication work below.
-3. ⬜ Once Cloudflare shows the domain active: set up Cloudflare Email
-   Routing (free, unlimited forwarding addresses) — `hello@bouge.xyz` (or
-   similar) forwards to the owner's existing Gmail. No new inbox to check,
-   no cost.
-4. ⬜ Add Klaviyo's SPF/DKIM records in Cloudflare DNS, complete domain
-   authentication in Klaviyo Settings → Domains
-5. ⬜ Switch Klaviyo's sender address to the real `@bouge.xyz` address
+     imported — kept, useful for the email authentication work below.
+3. ✅ Cloudflare Email Routing set up and confirmed live (MX + SPF records
+   verified via dig). Routing rule: `hello@bouge.xyz` → `bouge.xyz@gmail.com`
+   (Active). Catch-all rule exists but was still set to Drop/Disabled as of
+   this session — worth checking/enabling it (send to same Gmail) so nothing
+   addressed to the domain silently bounces.
+4. ✅ Klaviyo domain auth complete: used Klaviyo's "branded sending domain"
+   flow with subdomain prefix `send` (creates `send.bouge.xyz`, fully
+   delegated to Klaviyo's nameservers via 4 NS records — Klaviyo manages
+   that subdomain's DKIM/etc entirely on their own side, no ongoing
+   SPF-merge concern for it). Also added a one-time root-domain TXT record
+   `klaviyo-site-verification=W6Yhh3` (coexists fine with the existing SPF
+   TXT record — different record purpose, not a conflict). Verified by
+   Klaviyo within minutes, then **Activated** in Settings → Domains —
+   `send.bouge.xyz` shows Domain Status: Active.
+5. ✅ Sender switched from `bouge.xyz@gmail.com` to `hello@bouge.xyz` at the
+   list level (Lists & Segments → "Website Contact Form" → Settings →
+   Details → unchecked "Use account default", entered sender name "BOUGE" +
+   email `hello@bouge.xyz`). Saved and confirmed.
+
+**Status: this whole plan is now done.** Worth one real end-to-end test
+(submit a signup on the live site, confirm the welcome email actually lands
+in an inbox instead of spam) to fully close the loop, but all the
+infrastructure work is complete.
 
 **Future migration to Google Workspace** (if/when owner wants a paid, real
 mailbox instead of forwarding): easy, no lock-in. Cloudflare Email Routing
