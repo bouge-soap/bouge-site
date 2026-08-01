@@ -153,22 +153,34 @@ about organic ingredients per the compliance note above, since a detailed
 ingredient list is exactly the right context for that.
 
 ## Pending: Stripe product links + product photos
-As of 2026-08-01, the 3 product cards in `index.html` (`#soap` section —
-Charcoal, Rose Clay, Ivory) are in a **"coming soon" disabled state** ahead
-of launch — real product photos aren't final and Stripe isn't set up yet.
-Each card shows a greyed/desaturated photo, a "Coming Soon" badge overlay,
-and a disabled (non-clickable) button instead of a working "Buy Now" link:
-```html
-<span class="product-card__buy" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Coming Soon</span>
-```
-This is controlled by a single `coming-soon` class on the `<div class="products coming-soon" id="soap">` container in `index.html`.
+As of 2026-08-01, the entire product grid section (`#soap` — Charcoal, Rose
+Clay, Ivory cards) is **hidden entirely** via a `section-hidden` class on
+`<div class="products coming-soon section-hidden" id="soap">` in
+`index.html` (`.section-hidden { display: none; }` in `style.css`). Owner
+decided to hide the whole section rather than show the "coming soon"
+teaser state, until there's an actual product to launch. The "Soap" nav
+link was also removed (commented out) from the nav, since it pointed at
+this now-hidden section.
 
-**To re-enable purchasing later** (once real photos are ready and Stripe
-Payment Links exist):
-1. Remove the `coming-soon` class from that `.products` div — this
-   automatically restores full-color photos, hover effects, and hides the
-   "Coming Soon" badges (all scoped via CSS under `.products.coming-soon`,
-   see `styles/style.css`)
+The section still has its "coming soon" markup/styling underneath (grey
+photos, badges, disabled buttons — see below) — that's independent of the
+`section-hidden` visibility toggle and doesn't need to be touched to bring
+the section back.
+
+**To bring the section back** (once ready to at least tease the products,
+even before Stripe links are real):
+1. Remove `section-hidden` from the `.products` div
+2. Re-add the "Soap" nav link in the `<nav>` at the top of `index.html`
+   (currently commented out with a note pointing here)
+3. Decide whether it should still show as "coming soon" (see below) or go
+   straight to fully live
+
+**To fully launch purchasing** (once real photos are ready and Stripe
+Payment Links exist), in addition to the above:
+1. Also remove the `coming-soon` class from that `.products` div — this
+   restores full-color photos, hover effects, and hides the "Coming Soon"
+   badges (all scoped via CSS under `.products.coming-soon`, see
+   `styles/style.css`)
 2. Swap each `<span class="product-card__buy" data-stripe-link="...">Coming Soon</span>` back to `<a class="product-card__buy" href="STRIPE_LINK_HERE">Buy Now</a>` with the real Stripe Payment Link URL
 3. Replace the product images in `assets/images/` with final photos if the
    current ones aren't the ones to launch with

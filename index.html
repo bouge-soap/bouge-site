@@ -29,7 +29,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__links nav__links--left">
-    <a href="#soap">Soap</a>
+    <!-- "Soap" link hidden alongside the product section below — restore both together when products launch -->
     <a href="#story">Story</a>
   </div>
   <div class="nav__wordmark">BOUGE</div>
@@ -90,8 +90,8 @@
   <img src="assets/images/image-break.jpg" alt="BOUGE soap stack">
 </div>
 
-<!-- PRODUCT GRID — "coming-soon" class disables buying until real photos + Stripe links are ready. Remove that class (and swap the <span class="product-card__buy"> back to a real <a href> with the Stripe link) when launching purchases. -->
-<div class="products coming-soon" id="soap">
+<!-- PRODUCT GRID — hidden entirely (2026-08-01) until products are ready to launch. Remove `section-hidden` to bring it back (it'll still be in its "coming-soon" state at that point — see the coming-soon class notes below for un-teasing it). Also re-add the "Soap" nav link in the nav above when this comes back. -->
+<div class="products coming-soon section-hidden" id="soap">
 
   <!-- PLACEHOLDER PRODUCT CARD 1 — replace data-stripe-link with a real Stripe Payment Link URL, then re-enable (see comment above) -->
   <div class="product-card reveal">
