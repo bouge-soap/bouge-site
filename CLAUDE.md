@@ -15,11 +15,19 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
 ## Contact / Brand
 - Instagram: @bougesoap
-- Email: bouge.xyz@gmail.com
-- Domain `bouge.xyz` — registered at GoDaddy. Not yet pointed at Vercel or
-  used for email; site is still on `bouge-site.vercel.app` and Klaviyo's
-  sender is still a Gmail address. The "Shop BOUGE" button in the welcome
-  email links to `https://bouge.xyz` already, correctly.
+- Email: `hello@bouge.xyz` (forwards to `bouge.xyz@gmail.com` via Cloudflare
+  Email Routing — see Klaviyo section below for full setup)
+- Domain `bouge.xyz` — registered at GoDaddy, DNS managed at Cloudflare.
+  **Not yet pointed at Vercel** — the domain itself doesn't load the site;
+  live site is still only at `bouge-site.vercel.app`. Because of this, the
+  "Shop BOUGE" button in the welcome email (`~/Downloads/BOUGE Welcome
+  Email.html`) was deliberately changed 2026-08-01 to link to
+  `https://bouge-site.vercel.app` instead of `https://bouge.xyz`, so it
+  actually works for anyone who clicks it right now. **Once the domain is
+  connected to Vercel, switch this link back to `https://bouge.xyz`** — and
+  remember: editing that local HTML file does NOT update Klaviyo, the
+  updated HTML has to be re-pasted into the Flow's email block in Klaviyo's
+  editor for changes to take effect on real sends.
 
 ## Deployment
 - Site: static HTML/CSS/JS, no framework, no build step (see README in
