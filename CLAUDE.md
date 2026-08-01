@@ -62,9 +62,20 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
   Contact Form list," status Live. Built from a standalone HTML file
   (table-based, email-client safe) at `~/Downloads/BOUGE Welcome Email.html`,
   pasted into the flow's email block.
-- Promo code `WELCOME20` in that email is a placeholder — owner will create
-  the real discount code in Stripe when Stripe product setup happens (see
-  below), so don't treat it as final/live yet.
+- ⚠️ **No discount offer** — Jill decided against the 20%-off-first-order
+  idea entirely (2026-08-01). The `WELCOME20` promo code section was
+  removed from `~/Downloads/BOUGE Welcome Email.html` and replaced with a
+  "we'll be in touch when the next batch is ready" message + a "Visit
+  BOUGE" button (no code, no discount). Site copy (signup form notes) was
+  changed the same way: "Join the mailing list for updates on our next
+  batch." **Don't reintroduce discount/promo-code language** anywhere
+  (site or email) unless explicitly asked again.
+  - The updated welcome email HTML was edited locally but still needs to be
+    **re-pasted into Klaviyo's flow editor** to actually take effect on
+    real sends (editing the local file alone does nothing to Klaviyo).
+  - Klaviyo's **Preview text** field (typed manually in the flow's sidebar,
+    separate from the HTML) likely still references the old 20% copy —
+    needs updating too.
 - ✅ Sender is now `hello@bouge.xyz` (real domain address, set at the list
   level: Lists & Segments → "Website Contact Form" → Settings → Details →
   unchecked "Use account default"). Domain authentication is fully done —
@@ -161,8 +172,10 @@ Payment Links exist):
 2. Swap each `<span class="product-card__buy" data-stripe-link="...">Coming Soon</span>` back to `<a class="product-card__buy" href="STRIPE_LINK_HERE">Buy Now</a>` with the real Stripe Payment Link URL
 3. Replace the product images in `assets/images/` with final photos if the
    current ones aren't the ones to launch with
-4. Owner will likely also want the `WELCOME20`-equivalent Stripe discount
-   code created at the same time (see Klaviyo section above)
+
+Note: no discount/promo code is planned (see Klaviyo section above — the
+WELCOME20 idea was scrapped 2026-08-01), so nothing discount-related needs
+setting up in Stripe either.
 
 ## Founder section
 The photo/video column (`.founder__media`) was **removed entirely** (not
