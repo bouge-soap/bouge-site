@@ -66,17 +66,25 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
 ### Email setup plan (in progress as of 2026-08-01)
 Owner doesn't want to pay for email hosting yet, so the plan is:
-1. Create a free Cloudflare account, add `bouge.xyz` to it
-2. Update nameservers at GoDaddy to point to Cloudflare (domain stays
-   registered at GoDaddy — only DNS management moves). Low risk to do now
-   since nothing is live on this domain yet (site's still on the Vercel
-   URL, no email currently flowing through it).
-3. Set up Cloudflare Email Routing (free, unlimited forwarding addresses) —
-   `hello@bouge.xyz` (or similar) forwards to the owner's existing Gmail.
-   No new inbox to check, no cost.
-4. Add Klaviyo's SPF/DKIM records in Cloudflare DNS, complete domain
+1. ✅ Create a free Cloudflare account, add `bouge.xyz` to it — done
+2. ✅ Update nameservers at GoDaddy to point to Cloudflare (was
+   `ns49`/`ns50.domaincontrol.com`, now `itzel.ns.cloudflare.com` +
+   `vasilii.ns.cloudflare.com`) — done, **waiting on propagation** (can take
+   up to 24h, Cloudflare emails owner when active). Domain stays registered
+   at GoDaddy, only DNS management moved.
+   - GoDaddy's default parked-domain DNS records (A records to a
+     WebsiteBuilder placeholder, `www` CNAME, `_domainconnect` CNAME) were
+     imported into Cloudflare as-is, untouched — not in use, harmless to
+     leave. An existing `_dmarc` TXT record (`v=DMARC1; p=quarantine;
+     adkim=r; aspf=r; rua=mailto:dmarc_rua@onsecureserver.net;`) was also
+     imported — useful to keep for the email authentication work below.
+3. ⬜ Once Cloudflare shows the domain active: set up Cloudflare Email
+   Routing (free, unlimited forwarding addresses) — `hello@bouge.xyz` (or
+   similar) forwards to the owner's existing Gmail. No new inbox to check,
+   no cost.
+4. ⬜ Add Klaviyo's SPF/DKIM records in Cloudflare DNS, complete domain
    authentication in Klaviyo Settings → Domains
-5. Switch Klaviyo's sender address to the real `@bouge.xyz` address
+5. ⬜ Switch Klaviyo's sender address to the real `@bouge.xyz` address
 
 **Future migration to Google Workspace** (if/when owner wants a paid, real
 mailbox instead of forwarding): easy, no lock-in. Cloudflare Email Routing
