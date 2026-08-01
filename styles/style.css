@@ -58,7 +58,7 @@ a:hover {
 }
 
 input::placeholder {
-  color: rgba(28, 40, 48, 0.38);
+  color: rgba(243, 241, 236, 0.55);
 }
 
 input:focus-visible,
@@ -337,6 +337,16 @@ button {
   margin: 0 0 30px;
   font-weight: 300;
   max-width: 400px;
+}
+
+.hero__content .signup-form {
+  margin-top: 28px;
+}
+
+@media (min-width: 720px) {
+  .hero__content .signup-form {
+    margin-top: 0;
+  }
 }
 
 /* ==========================================================================
