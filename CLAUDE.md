@@ -133,16 +133,28 @@ finalized. When this happens, it's a good place to be fully specific/accurate
 about organic ingredients per the compliance note above, since a detailed
 ingredient list is exactly the right context for that.
 
-## Pending: Stripe product links
-The 3 product cards in `index.html` (`#soap` section — Charcoal, Rose Clay,
-Ivory) each have a placeholder "Buy Now" button:
+## Pending: Stripe product links + product photos
+As of 2026-08-01, the 3 product cards in `index.html` (`#soap` section —
+Charcoal, Rose Clay, Ivory) are in a **"coming soon" disabled state** ahead
+of launch — real product photos aren't final and Stripe isn't set up yet.
+Each card shows a greyed/desaturated photo, a "Coming Soon" badge overlay,
+and a disabled (non-clickable) button instead of a working "Buy Now" link:
 ```html
-<a class="product-card__buy" href="#" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Buy Now</a>
+<span class="product-card__buy" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Coming Soon</span>
 ```
-Owner will ask for help creating the actual Stripe Payment Links (and likely
-the `WELCOME20`-equivalent discount code) — when that happens, update both
-the `href` and `data-stripe-link` attribute on each card to the real Stripe
-Payment Link URL.
+This is controlled by a single `coming-soon` class on the `<div class="products coming-soon" id="soap">` container in `index.html`.
+
+**To re-enable purchasing later** (once real photos are ready and Stripe
+Payment Links exist):
+1. Remove the `coming-soon` class from that `.products` div — this
+   automatically restores full-color photos, hover effects, and hides the
+   "Coming Soon" badges (all scoped via CSS under `.products.coming-soon`,
+   see `styles/style.css`)
+2. Swap each `<span class="product-card__buy" data-stripe-link="...">Coming Soon</span>` back to `<a class="product-card__buy" href="STRIPE_LINK_HERE">Buy Now</a>` with the real Stripe Payment Link URL
+3. Replace the product images in `assets/images/` with final photos if the
+   current ones aren't the ones to launch with
+4. Owner will likely also want the `WELCOME20`-equivalent Stripe discount
+   code created at the same time (see Klaviyo section above)
 
 ## Founder section
 The photo/video column (`.founder__media`) was **removed entirely** (not
