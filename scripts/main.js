@@ -80,12 +80,22 @@ if (nav) {
 
 document.querySelectorAll('.signup-form').forEach((form) => {
   const input = form.querySelector('.signup-form__input');
+  const honeypot = form.querySelector('.signup-form__hp');
   const button = form.querySelector('.signup-form__button');
   const errorEl = form.parentElement.querySelector('.signup-form__error');
+  const loadedAt = Date.now();
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     if (errorEl) errorEl.classList.remove('is-visible');
+
+    // Bot check: honeypot field filled, or submitted faster than a human could type an email.
+    if ((honeypot && honeypot.value) || Date.now() - loadedAt < 1500) {
+      button.textContent = "You're in";
+      input.value = '';
+      input.disabled = true;
+      return;
+    }
 
     button.disabled = true;
     button.textContent = 'Joining...';
