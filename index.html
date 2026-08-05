@@ -37,6 +37,12 @@
 </head>
 <body>
 
+<!-- In-app browser notice (Instagram/Facebook) — shown via JS only when detected -->
+<div class="iab-banner" id="iabBanner" hidden>
+  <p class="iab-banner__text">Heads up — tap <strong>&bull;&bull;&bull;</strong> above and choose <strong>"Open in Browser"</strong> for the smoothest experience.</p>
+  <button class="iab-banner__dismiss" id="iabBannerDismiss" aria-label="Dismiss">&times;</button>
+</div>
+
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__links nav__links--left">

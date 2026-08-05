@@ -140,6 +140,61 @@ button {
 /* ==========================================================================
    Nav
    ========================================================================== */
+.iab-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 11px var(--space-page-x);
+  background: rgba(212, 146, 46, 0.1);
+  border-bottom: 1px solid rgba(212, 146, 46, 0.22);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--color-slate);
+  animation: iab-banner-in 400ms var(--ease-smooth);
+}
+
+.iab-banner[hidden] {
+  display: none;
+}
+
+.iab-banner__text {
+  flex: 1;
+  margin: 0;
+}
+
+.iab-banner__text strong {
+  color: var(--color-amber);
+  font-weight: 600;
+}
+
+.iab-banner__dismiss {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  padding: 0;
+  color: var(--color-slate);
+  opacity: 0.5;
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+  transition: opacity 200ms var(--ease-smooth);
+}
+
+.iab-banner__dismiss:hover {
+  opacity: 1;
+}
+
+@keyframes iab-banner-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .nav {
   display: flex;
   flex-wrap: wrap;

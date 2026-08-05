@@ -41,6 +41,25 @@ async function subscribeToKlaviyo(email) {
   return response.ok;
 }
 
+// In-app browser notice (Instagram/Facebook) — these WebViews can break
+// third-party requests like the signup form's Klaviyo call, so nudge people
+// toward "Open in Browser" instead of letting them hit a silent failure.
+const iabBanner = document.getElementById('iabBanner');
+if (iabBanner) {
+  const isInAppBrowser = /Instagram|FBAN|FBAV/.test(navigator.userAgent);
+  const dismissed = sessionStorage.getItem('iabBannerDismissed') === '1';
+  if (isInAppBrowser && !dismissed) {
+    iabBanner.hidden = false;
+  }
+  const dismissBtn = document.getElementById('iabBannerDismiss');
+  if (dismissBtn) {
+    dismissBtn.addEventListener('click', () => {
+      iabBanner.hidden = true;
+      sessionStorage.setItem('iabBannerDismissed', '1');
+    });
+  }
+}
+
 // Hero entrance
 const heroContent = document.querySelector('.hero__content');
 if (heroContent) {
