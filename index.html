@@ -46,7 +46,7 @@
 <!-- NAV -->
 <nav class="nav">
   <div class="nav__links nav__links--left">
-    <!-- "Soap" link hidden alongside the product section below — restore both together when products launch -->
+    <a href="#soap">Soap</a>
     <a href="#story">Story</a>
   </div>
   <div class="nav__wordmark">BOUGE</div>
@@ -66,6 +66,8 @@
     <div class="hero__label">All natural &middot; Carefully sourced &middot; Small batch</div>
     <p class="hero__body">Small-batch natural soap crafted from the finest sourced ingredients.</p>
 
+    <a class="hero__buy" href="#soap">Shop Soaps</a>
+
     <form class="signup-form" novalidate>
       <input class="signup-form__input" type="email" name="email" placeholder="your@email.com" required aria-label="Email address">
       <input class="signup-form__hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
@@ -73,6 +75,37 @@
     </form>
     <div class="signup-form__note">Join the mailing list for updates on our next batch.</div>
     <div class="signup-form__error">Something went wrong — please try again.</div>
+  </div>
+</div>
+
+<!-- LATEST BATCH — conversion-focused teaser right after the hero: AZURE, LAVANDE, and the box, one-click buy, links to the full grid below for anyone browsing before buying. -->
+<div class="latest-batch">
+  <div class="latest-batch__header reveal">
+    <div>
+      <div class="latest-batch__label">Latest batch</div>
+      <h2 class="latest-batch__heading">Fresh from the workshop.</h2>
+    </div>
+    <a class="latest-batch__view-all" href="#soap">View all soaps &rarr;</a>
+  </div>
+  <div class="latest-batch__grid">
+    <div class="latest-batch__card reveal">
+      <img class="latest-batch__img" src="assets/images/product-azure.jpg" alt="BOUGE AZURE soap bar, peach tone with a grey wave detail">
+      <div class="latest-batch__name">AZURE</div>
+      <div class="latest-batch__price">$16 CAD</div>
+      <a class="latest-batch__buy" href="https://buy.stripe.com/bJefZiaYU8DE639gEq1RC00">Buy Now</a>
+    </div>
+    <div class="latest-batch__card reveal reveal--delay-1">
+      <img class="latest-batch__img" src="assets/images/product-lavande.jpg" alt="BOUGE LAVANDE soap bar, ivory with dried lavender detail">
+      <div class="latest-batch__name">LAVANDE</div>
+      <div class="latest-batch__price">$16 CAD</div>
+      <a class="latest-batch__buy" href="https://buy.stripe.com/8x27sM8QM6vwezFdse1RC07">Buy Now</a>
+    </div>
+    <div class="latest-batch__card reveal reveal--delay-2">
+      <img class="latest-batch__img" src="assets/images/product-bulk-box.jpg" alt="Box of six BOUGE soap bars, packed in kraft paper filler">
+      <div class="latest-batch__name">BOUGE Box</div>
+      <div class="latest-batch__price">From $45 CAD</div>
+      <a class="latest-batch__buy" href="#soap">Choose Size</a>
+    </div>
   </div>
 </div>
 
@@ -94,8 +127,12 @@
     <div class="founder__label">The maker</div>
     <h2 class="founder__heading">I'm Jill.</h2>
     <div class="founder__subtitle">Founder &amp; soap maker</div>
-    <p class="founder__paragraph">BOUGE began with a simple search for a beautiful bar of soap, one that felt luxurious without being extravagant, crafted with care, and a pleasure to reach for every day. When I couldn't find exactly what I was looking for, I began learning how to make it myself.</p>
-    <p class="founder__paragraph">What started as curiosity quickly became a quiet obsession. Every recipe refined, every ingredient carefully chosen, every detail considered, from the feel of the lather to the weight of each bar, to the way it rests in your hand.</p>
+    <p class="founder__paragraph">BOUGE began with a rather ordinary thought: why shouldn't a bar of soap be beautiful?</p>
+    <p class="founder__paragraph">I wanted something that felt wonderful to use, looked beautiful sitting by the sink, and was made with ingredients chosen with intention. When I couldn't quite find what I had in mind, I decided to make it myself.</p>
+    <p class="founder__paragraph">What began as curiosity quickly became something of an obsession.</p>
+    <p class="founder__paragraph">I learned the chemistry. I experimented with oils, butters, clays and scent. I made batch after batch, refining not only the recipe, but the details — the lather, the weight of the bar, the way it feels in your hand, and, of course, the way it looks.</p>
+    <p class="founder__paragraph">Today, every BOUGE bar is still made by me, in small batches, with that same attention to detail.</p>
+    <p class="founder__paragraph">Because the things we use every day don't have to be ordinary.</p>
     <div class="founder__pull-quote">
       <p class="founder__pull-quote-text">"I believe everyday objects can elevate everyday moments."</p>
       <div class="founder__pull-quote-attribution">Jill, founder of BOUGE</div>
@@ -108,56 +145,70 @@
   <img src="assets/images/image-break.jpg" alt="BOUGE soap stack">
 </div>
 
-<!-- PRODUCT GRID — hidden entirely (2026-08-01) until products are ready to launch. Remove `section-hidden` to bring it back (it'll still be in its "coming-soon" state at that point — see the coming-soon class notes below for un-teasing it). Also re-add the "Soap" nav link in the nav above when this comes back. -->
-<div class="products coming-soon section-hidden" id="soap">
+<!-- PRODUCT GRID — live, real Stripe Payment Links wired to every Buy Now button. AZURE, LAVANDE, Eclipse, and BOUGE Box (3-pack/6-pack). See CLAUDE.md for Stripe object IDs and full history. -->
+<div class="products" id="soap">
 
-  <!-- PLACEHOLDER PRODUCT CARD 1 — replace data-stripe-link with a real Stripe Payment Link URL, then re-enable (see comment above) -->
+  <!-- AZURE — peach/tan bar with grey wave detail, real name + description from Jill. -->
   <div class="product-card reveal">
     <div class="product-card__media">
-      <img class="product-card__img" src="assets/images/product-charcoal.jpg" alt="BOUGE No.1 Charcoal soap bar">
-      <span class="product-card__badge">Coming Soon</span>
+      <img class="product-card__img" src="assets/images/product-azure.jpg" alt="BOUGE AZURE soap bar, peach tone with a grey wave detail">
     </div>
-    <div class="product-card__name">No. 1 &middot; Charcoal</div>
-    <div class="product-card__subtitle">Activated charcoal &middot; amber &middot; sea mineral</div>
-    <span class="product-card__buy" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Coming Soon</span>
-    <div class="product-card__overlay">
-      <div class="product-card__overlay-label">BOUGE Soaps</div>
-      <div class="product-card__overlay-heading">Available soon</div>
-      <div class="product-card__overlay-text">Join our mailing list for launch updates.</div>
-    </div>
+    <div class="product-card__name">AZURE</div>
+    <div class="product-card__subtitle">Raspberry-Lime heaven. Fresh Raspberry &amp; Lime meet cool mint-bright clean and beautifully unexpected.</div>
+    <div class="product-card__ingredients"><span class="product-card__ingredients-label">Ingredients</span> Organic olive, coconut, castor oil &amp; shea butter, Cambrian blue clay</div>
+    <div class="product-card__price">$16 CAD</div>
+    <a class="product-card__buy" href="https://buy.stripe.com/bJefZiaYU8DE639gEq1RC00">Buy Now</a>
   </div>
 
-  <!-- PLACEHOLDER PRODUCT CARD 2 — replace data-stripe-link with a real Stripe Payment Link URL, then re-enable (see comment above) -->
-  <div class="product-card reveal reveal--delay-1">
+  <!-- LAVANDE — ivory bar with dried lavender top, real name + description from Jill. -->
+  <div class="product-card reveal reveal--delay-3">
     <div class="product-card__media">
-      <img class="product-card__img" src="assets/images/product-rose-clay.jpg" alt="BOUGE No.2 Rose Clay soap bar">
-      <span class="product-card__badge">Coming Soon</span>
+      <img class="product-card__img" src="assets/images/product-lavande.jpg" alt="BOUGE LAVANDE soap bar, ivory with dried lavender detail">
     </div>
-    <div class="product-card__name">No. 2 &middot; Rose Clay</div>
-    <div class="product-card__subtitle">Rose clay &middot; organic shea &middot; calendula</div>
-    <span class="product-card__buy" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Coming Soon</span>
-    <div class="product-card__overlay">
-      <div class="product-card__overlay-label">BOUGE Soaps</div>
-      <div class="product-card__overlay-heading">Available soon</div>
-      <div class="product-card__overlay-text">Join our mailing list for launch updates.</div>
-    </div>
+    <div class="product-card__name">LAVANDE</div>
+    <div class="product-card__subtitle">French lavender softened with violet and jasmine, brightened by citrus and grounded in warm amber, musk and woods</div>
+    <div class="product-card__ingredients"><span class="product-card__ingredients-label">Ingredients</span> Organic olive, coconut, castor oil &amp; shea butter, Brazilian yellow clay, activated charcoal</div>
+    <div class="product-card__price">$16 CAD</div>
+    <a class="product-card__buy" href="https://buy.stripe.com/8x27sM8QM6vwezFdse1RC07">Buy Now</a>
   </div>
 
-  <!-- PLACEHOLDER PRODUCT CARD 3 — replace data-stripe-link with a real Stripe Payment Link URL, then re-enable (see comment above) -->
-  <div class="product-card reveal reveal--delay-2">
+  <!-- ECLIPSE — dark charcoal bar with gold detail, real name + description from Jill. -->
+  <div class="product-card reveal">
     <div class="product-card__media">
-      <img class="product-card__img" src="assets/images/product-ivory.jpg" alt="BOUGE No.3 Ivory soap bar">
-      <span class="product-card__badge">Coming Soon</span>
+      <img class="product-card__img" src="assets/images/product-eclipse.jpg" alt="BOUGE Eclipse soap bar, dark charcoal with gold detail">
     </div>
-    <div class="product-card__name">No. 3 &middot; Ivory</div>
-    <div class="product-card__subtitle">Pure castile &middot; cold process olive &middot; oat</div>
-    <span class="product-card__buy" data-stripe-link="REPLACE_WITH_STRIPE_PAYMENT_LINK">Coming Soon</span>
-    <div class="product-card__overlay">
-      <div class="product-card__overlay-label">BOUGE Soaps</div>
-      <div class="product-card__overlay-heading">Available soon</div>
-      <div class="product-card__overlay-text">Join our mailing list for launch updates.</div>
-    </div>
+    <div class="product-card__name">Eclipse</div>
+    <div class="product-card__subtitle">Dark, seductive and unexpectedly fresh. Wild berries and bright lime open into soft vanilla, settling into a smooth white musk.</div>
+    <div class="product-card__ingredients"><span class="product-card__ingredients-label">Ingredients</span> Organic olive, coconut, castor oil &amp; shea butter, activated charcoal</div>
+    <div class="product-card__price">$16 CAD</div>
+    <a class="product-card__buy" href="https://buy.stripe.com/8x2dRa6IEf224Z5bk61RC08">Buy Now</a>
   </div>
+
+  <!-- BULK / GIFT BOX — box of 6, sold as box of 3 or box of 6 via the quantity select. Real name/description/pricing. -->
+  <div class="product-card product-card--bulk reveal reveal--delay-3">
+    <div class="product-card__media">
+      <img class="product-card__img" src="assets/images/product-bulk-box.jpg" alt="Box of six BOUGE soap bars, packed in kraft paper filler">
+    </div>
+    <div class="product-card__name">BOUGE Box</div>
+    <div class="product-card__subtitle">A curated set of BOUGE bars &mdash; AZURE, LAVANDE, and Eclipse &mdash; packaged together and ready to gift. Choose a box of three or six.</div>
+    <label class="product-card__qty">
+      <span class="product-card__qty-label">Box size</span>
+      <select class="product-card__qty-select" id="bougeBoxSize">
+        <option value="https://buy.stripe.com/00w8wQc2Y5rsajpdse1RC03" data-price="$45 CAD">Box of 3</option>
+        <option value="https://buy.stripe.com/00wcN68QM1bcajp73Q1RC04" data-price="$85 CAD">Box of 6</option>
+      </select>
+    </label>
+    <div class="product-card__price" id="bougeBoxPrice">$45 CAD</div>
+    <a class="product-card__buy" id="bougeBoxBuy" href="https://buy.stripe.com/00w8wQc2Y5rsajpdse1RC03">Buy Now</a>
+  </div>
+
+  <script>
+    document.getElementById('bougeBoxSize').addEventListener('change', function () {
+      var selected = this.options[this.selectedIndex];
+      document.getElementById('bougeBoxBuy').href = selected.value;
+      document.getElementById('bougeBoxPrice').textContent = selected.dataset.price;
+    });
+  </script>
 
 </div>
 

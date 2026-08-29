@@ -357,6 +357,8 @@ button {
 .hero__content.is-loaded > *:nth-child(4) { transition-delay: 420ms; }
 .hero__content.is-loaded > *:nth-child(5) { transition-delay: 500ms; }
 .hero__content.is-loaded > *:nth-child(6) { transition-delay: 580ms; }
+.hero__content.is-loaded > *:nth-child(7) { transition-delay: 660ms; }
+.hero__content.is-loaded > *:nth-child(8) { transition-delay: 740ms; }
 
 @media (prefers-reduced-motion: reduce) {
   .hero__content > * {
@@ -399,6 +401,28 @@ button {
   margin: 0 0 30px;
   font-weight: 300;
   max-width: 400px;
+}
+
+.hero__buy {
+  display: inline-block;
+  padding: 17px 38px;
+  background: var(--color-amber);
+  color: var(--color-slate);
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-family: var(--font-wordmark), sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 26px;
+  transition: background 300ms var(--ease-smooth), transform 250ms var(--ease-smooth), box-shadow 300ms var(--ease-smooth);
+}
+
+.hero__buy:hover {
+  background: #e3b978;
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px -10px rgba(212, 146, 46, 0.5);
 }
 
 .hero__content .signup-form {
@@ -705,6 +729,104 @@ button {
 }
 
 /* ==========================================================================
+   Latest batch (hero teaser)
+   ========================================================================== */
+.latest-batch {
+  padding: var(--space-section-y) var(--space-page-x);
+}
+
+.latest-batch__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.latest-batch__label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+}
+
+.latest-batch__heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 4vw, 34px);
+  margin: 8px 0 0;
+}
+
+.latest-batch__view-all {
+  font-family: var(--font-body), sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  white-space: nowrap;
+}
+
+.latest-batch__view-all:hover {
+  color: var(--color-amber);
+}
+
+.latest-batch__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+@media (min-width: 700px) {
+  .latest-batch__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}
+
+.latest-batch__img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.latest-batch__name {
+  font-family: var(--font-display);
+  font-size: 19px;
+}
+
+.latest-batch__price {
+  font-size: 13.5px;
+  color: rgba(28, 40, 48, 0.52);
+  margin: 4px 0 16px;
+}
+
+.latest-batch__buy {
+  display: inline-block;
+  padding: 11px 26px;
+  background: var(--color-slate);
+  color: var(--color-bg);
+  border: none;
+  border-radius: var(--radius-pill);
+  text-decoration: none;
+  font-family: var(--font-body), sans-serif;
+  font-size: 10.5px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 300ms var(--ease-smooth), transform 250ms var(--ease-smooth);
+}
+
+.latest-batch__buy:hover {
+  background: var(--color-amber);
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
    Product grid
    ========================================================================== */
 .products {
@@ -746,41 +868,6 @@ button {
   transform: scale(1.045);
 }
 
-.product-card__badge {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  padding: 7px 16px;
-  background: rgba(28, 40, 48, 0.88);
-  color: var(--color-bg);
-  font-size: 9.5px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  border-radius: var(--radius-pill);
-  display: none;
-}
-
-/* Coming-soon state — remove the `coming-soon` class on .products (and
-   swap .product-card__buy back to a real <a href> with the Stripe link)
-   once real photos + Stripe links are ready. */
-.products.coming-soon .product-card__img {
-  filter: grayscale(90%);
-  opacity: 0.55;
-}
-
-.products.coming-soon .product-card__badge {
-  display: inline-block;
-}
-
-.products.coming-soon .product-card:hover {
-  box-shadow: none;
-  transform: none;
-}
-
-.products.coming-soon .product-card:hover .product-card__img {
-  transform: none;
-}
-
 @media (prefers-reduced-motion: reduce) {
   .product-card,
   .product-card__img {
@@ -807,6 +894,29 @@ button {
   margin-top: 6px;
 }
 
+.product-card__price {
+  font-family: var(--font-body), sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-slate);
+  margin-top: 14px;
+}
+
+.product-card__ingredients {
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: rgba(28, 40, 48, 0.45);
+  margin-top: 10px;
+}
+
+.product-card__ingredients-label {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 600;
+  color: rgba(28, 40, 48, 0.6);
+  margin-right: 5px;
+}
+
 .product-card__buy {
   display: inline-block;
   margin-top: 20px;
@@ -829,67 +939,59 @@ button {
   box-shadow: 0 12px 22px -8px rgba(212, 146, 46, 0.45);
 }
 
-.products.coming-soon .product-card__buy {
+/* Not-yet-linkable state — real photo/card is finished, but no Stripe
+   Payment Link exists yet. Distinct from the old `.products.coming-soon`
+   teaser (that grayscaled the image too); here the photo stays full color,
+   only the buy control is inert. Swap the `<span class="product-card__buy
+   product-card__buy--disabled">` back to a real `<a href="STRIPE_LINK">`
+   (drop the --disabled modifier) once a Payment Link exists. */
+.product-card__buy--disabled {
   background: rgba(28, 40, 48, 0.12);
   color: rgba(28, 40, 48, 0.4);
   cursor: default;
   pointer-events: none;
 }
 
-.products.coming-soon .product-card__buy:hover {
+.product-card__buy--disabled:hover {
   background: rgba(28, 40, 48, 0.12);
   transform: none;
   box-shadow: none;
 }
 
-.product-card__overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 3;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-  background: var(--color-slate);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 350ms var(--ease-smooth);
+.product-card__qty {
+  display: block;
+  margin-top: 18px;
 }
 
-.products.coming-soon .product-card:hover .product-card__overlay {
-  opacity: 0.97;
-}
-
-.product-card__overlay-label {
-  font-size: 10px;
-  letter-spacing: 0.3em;
+.product-card__qty-label {
+  display: block;
+  font-size: 10.5px;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--color-amber);
-  margin-bottom: 14px;
+  color: rgba(28, 40, 48, 0.52);
+  margin-bottom: 6px;
 }
 
-.product-card__overlay-heading {
-  font-family: var(--font-display);
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(22px, 4vw, 28px);
-  color: var(--color-bg);
-  margin-bottom: 12px;
+.product-card__qty-select {
+  width: 100%;
+  max-width: 260px;
+  padding: 12px 16px;
+  background: var(--color-bg);
+  border: 1px solid rgba(28, 40, 48, 0.2);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body), sans-serif;
+  font-size: 13px;
+  color: var(--color-slate);
 }
 
-.product-card__overlay-text {
-  font-size: 12px;
-  line-height: 1.6;
-  color: rgba(243, 241, 236, 0.75);
-  max-width: 220px;
+.product-card__qty-select:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .product-card__overlay {
-    transition: none;
-  }
+.product-card--bulk .product-card__img {
+  object-fit: contain;
+  background: var(--color-bg);
 }
 
 @media (min-width: 700px) {
