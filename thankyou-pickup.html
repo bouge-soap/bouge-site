@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+
+<title>Thank you — BOUGE</title>
+<meta name="description" content="Thank you for your BOUGE pickup order.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=DM+Serif+Display:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles/style.css">
+<style>
+  .thankyou {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-section-y) var(--space-page-x);
+    text-align: center;
+  }
+  .thankyou__inner {
+    max-width: 560px;
+  }
+  .thankyou__heading {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(32px, 5vw, 48px);
+    margin: 18px 0 20px;
+  }
+  .thankyou__body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-muted);
+    margin: 0 0 32px;
+  }
+  .thankyou__link {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--color-slate);
+    color: var(--color-bg);
+    text-decoration: none;
+    border-radius: var(--radius-pill);
+    font-family: var(--font-body), sans-serif;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    transition: background 300ms var(--ease-smooth);
+  }
+  .thankyou__link:hover {
+    background: var(--color-amber);
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__links nav__links--left">
+    <a href="/#story">Story</a>
+  </div>
+  <div class="nav__wordmark">BOUGE</div>
+  <div class="nav__links nav__links--right">
+    <a href="/#wholesale">Wholesale</a>
+    <a href="/#contact">Contact</a>
+  </div>
+</nav>
+
+<div class="thankyou">
+  <div class="thankyou__inner">
+    <div class="story__label">Order confirmed</div>
+    <h1 class="thankyou__heading">Thank you.</h1>
+    <p class="thankyou__body">Your BOUGE pickup order is confirmed. We'll be in touch by email shortly to arrange a pickup location and time in Kelowna.</p>
+    <a class="thankyou__link" href="/">Back to BOUGE</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer" id="contact">
+  <span class="footer__wordmark">BOUGE</span>
+  <div class="footer__meta">
+    <span class="footer__note">Locally made, with love</span>
+    <a class="footer__social" href="https://instagram.com/bougesoap" target="_blank" rel="noopener noreferrer" aria-label="BOUGE on Instagram">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <rect x="2.5" y="2.5" width="19" height="19" rx="5"/>
+        <circle cx="12" cy="12" r="4.2"/>
+        <circle cx="17.4" cy="6.6" r="0.9" fill="currentColor" stroke="none"/>
+      </svg>
+      @bougesoap
+    </a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -803,7 +803,13 @@ button {
 .latest-batch__price {
   font-size: 13.5px;
   color: rgba(28, 40, 48, 0.52);
-  margin: 4px 0 16px;
+  margin: 4px 0 2px;
+}
+
+.latest-batch__shipping-note {
+  font-size: 11px;
+  color: rgba(28, 40, 48, 0.4);
+  margin: 0 0 16px;
 }
 
 .latest-batch__buy {
@@ -824,6 +830,36 @@ button {
 .latest-batch__buy:hover {
   background: var(--color-amber);
   transform: translateY(-1px);
+}
+
+.latest-batch__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.latest-batch__action-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.latest-batch__buy--pickup {
+  background: transparent;
+  color: var(--color-slate);
+  border: 1px solid rgba(28, 40, 48, 0.35);
+}
+
+.latest-batch__buy--pickup:hover {
+  background: var(--color-slate);
+  color: var(--color-bg);
+}
+
+.latest-batch__action-note {
+  font-size: 10.5px;
+  color: rgba(28, 40, 48, 0.4);
+  margin-top: 8px;
 }
 
 /* ==========================================================================
@@ -902,6 +938,12 @@ button {
   margin-top: 14px;
 }
 
+.product-card__shipping-note {
+  font-size: 11.5px;
+  color: rgba(28, 40, 48, 0.45);
+  margin-top: 2px;
+}
+
 .product-card__ingredients {
   font-size: 11.5px;
   line-height: 1.6;
@@ -937,6 +979,42 @@ button {
   opacity: 1;
   transform: translateY(-1px);
   box-shadow: 0 12px 22px -8px rgba(212, 146, 46, 0.45);
+}
+
+.product-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.product-card__action-col {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.product-card__actions .product-card__buy {
+  margin-top: 0;
+}
+
+.product-card__buy--pickup {
+  background: transparent;
+  color: var(--color-slate);
+  border: 1px solid rgba(28, 40, 48, 0.35);
+}
+
+.product-card__buy--pickup:hover {
+  background: var(--color-slate);
+  color: var(--color-bg);
+  box-shadow: none;
+}
+
+.product-card__action-note {
+  font-size: 11px;
+  color: rgba(28, 40, 48, 0.4);
+  margin-top: 8px;
 }
 
 /* Not-yet-linkable state — real photo/card is finished, but no Stripe
