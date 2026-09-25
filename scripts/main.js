@@ -38,7 +38,9 @@ async function subscribeToKlaviyo(email) {
     }
   );
 
-  return response.ok;
+  if (response.ok) return 'ok';
+  // 400 = Klaviyo rejected the input itself (almost always a mistyped email).
+  return response.status === 400 ? 'invalid' : 'error';
 }
 
 // In-app browser notice (Instagram/Facebook) — these WebViews can break
@@ -120,18 +122,23 @@ document.querySelectorAll('.signup-form').forEach((form) => {
     button.textContent = 'Joining...';
 
     try {
-      const ok = await subscribeToKlaviyo(input.value.trim());
-      if (ok) {
+      const result = await subscribeToKlaviyo(input.value.trim());
+      if (result === 'ok') {
         button.textContent = "You're in";
         input.value = '';
         input.disabled = true;
       } else {
-        throw new Error('Klaviyo request failed');
+        throw new Error(result);
       }
     } catch (err) {
       button.textContent = 'Try again';
       button.disabled = false;
-      if (errorEl) errorEl.classList.add('is-visible');
+      if (errorEl) {
+        errorEl.textContent = err.message === 'invalid'
+          ? 'That email doesn\u2019t look quite right. Please double-check it.'
+          : 'We couldn\u2019t connect just now. Please try again, or email hello@bouge.xyz.';
+        errorEl.classList.add('is-visible');
+      }
     }
   });
 });
