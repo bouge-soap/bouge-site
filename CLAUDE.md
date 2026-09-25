@@ -2,6 +2,26 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Pending as of 2026-09-25 — Atelier bars (waiting on Jill's names ↔ image #s)
+- Photos: HEIC in `~/Downloads/` — IMG_8089, 8102, 8120, 8128, 8175, 8178, 8182, 8184 (8184 sent twice, identical). Most shot sideways; rotate upright when cropping. Keep true colour, do not warm (owner rejected tinted version).
+- Decisions: line is spelled **Atelier**. $16 CAD like other bars, **15-unit cap** each, shipping + pickup links for each. Probably its own Atelier section (owner to confirm).
+- Blurb to add below the soaps (grammar-corrected, approved):
+  "Every BOUGE bar begins with our signature blend of organic olive, coconut and castor oils and shea butter. Each bar is then finished with carefully selected clays and/or activated charcoal, occasionally mineral colourants, and always scented with the finest essential oils.
+  Our Atelier bars are produced in limited pours, so colourants and scents may vary. Full ingredients are provided with each bar."
+- **Sale-alert Workflow pickup branch is LIVE** — confirmed 2026-09-25 via owner screenshot: "BOUGE SOAP SALE" v2 Active since Sep 7, 6:42 PM (the older "still Draft" notes below are stale). 0 runs as of 2026-09-25, so still untested by a real order.
+- Build-your-own box is still NOT in scope.
+- Mapping from Jill: 8102=No.01, 8111=No.02, 8184=No.03, 8186=No.04, 8182=No.05, 8178=No.06, 8128=No.07, 8175=No.08. Section title "Atelier Collection". 8111 + 8186 received 2026-09-25, all 8 built. 8089/8120 unassigned (assumed alt/extra shots).
+- Built locally (not committed): `assets/images/product-atelier-01…08.jpg` (rotated upright, square 1400px, NO colour correction — a warming/auto-contrast pass was tried and rejected by owner 2026-09-25, it tinted the bars peach), `#atelier` section + `.products--atelier` grid + `.soap-note` blurb below it in `index.html`, styles in `style.css`. Buy buttons are disabled `<span data-stripe-link="atelier-NN">` placeholders.
+- **Stripe created 2026-09-25** (owner approved), BOUGE account `acct_1U9EP7K5HjcCzJ5G`. $16 CAD each, both links capped at 15 (separate caps, same caveat as core bars), ship link uses bar rate `shr_1U9sc9K5HjcCzJ5G3dV5tumQ`, pickup links mirror existing pickup config. Site buttons wired.
+  - No.01 → `prod_VKKsBrmHKMwSZw`, `price_1UJgCjK5HjcCzJ5GRPjfAELN`, ship `plink_1UJgCjK5HjcCzJ5GqNgBDhZt` https://buy.stripe.com/4gM5kEc2Yf226390Fs1RC0g , pickup `plink_1UJgCkK5HjcCzJ5GLg2JuE7a` https://buy.stripe.com/14A8wQaYUcTU77d87U1RC0h
+  - No.02 → `prod_VKKsvmaGyIC58p`, `price_1UJgClK5HjcCzJ5GZhOpElie`, ship `plink_1UJgCmK5HjcCzJ5Gr3XqHITv` https://buy.stripe.com/00w9AUd722fg3V1gEq1RC0i , pickup `plink_1UJgCmK5HjcCzJ5G8kiPw7Xp` https://buy.stripe.com/5kQ4gA2so8DEajpcoa1RC0j
+  - No.03 → `prod_VKKsrPo9GaeCaD`, `price_1UJgCoK5HjcCzJ5G2xyRJF2h`, ship `plink_1UJgCoK5HjcCzJ5GyO2EjoCy` https://buy.stripe.com/00w28s5EA8DE2QX73Q1RC0k , pickup `plink_1UJgCpK5HjcCzJ5G6hJKuw3g` https://buy.stripe.com/eVq7sM3wsf226390Fs1RC0l
+  - No.04 → `prod_VKKsNAxZ1fZM2P`, `price_1UJgCqK5HjcCzJ5G69MDvAi6`, ship `plink_1UJgCrK5HjcCzJ5GhEM7MobY` https://buy.stripe.com/bJefZi6IE4no1MT87U1RC0m , pickup `plink_1UJgCrK5HjcCzJ5GruZGKxm7` https://buy.stripe.com/eVqcN6c2YbPQ1MT87U1RC0n
+  - No.05 → `prod_VKKsP4NWAlVosU`, `price_1UJgCtK5HjcCzJ5GzRnzqvk8`, ship `plink_1UJgCtK5HjcCzJ5GBaX4UPwV` https://buy.stripe.com/00w3cw7MI8DE2QX73Q1RC0o , pickup `plink_1UJgCuK5HjcCzJ5GZ7iPEvE8` https://buy.stripe.com/00w4gA7MIg669fl1Jw1RC0p
+  - No.06 → `prod_VKKs574TUiuQwJ`, `price_1UJgCvK5HjcCzJ5GcG5CIILR`, ship `plink_1UJgCwK5HjcCzJ5Gjbytqu5Z` https://buy.stripe.com/cNi9AU3ws1bc1MT5ZM1RC0q , pickup `plink_1UJgCwK5HjcCzJ5G3gJ3eFap` https://buy.stripe.com/aFa5kE9UQaLM0IP1Jw1RC0r
+  - No.07 → `prod_VKKs5KwhPXpwze`, `price_1UJgCyK5HjcCzJ5Gc2rYQYTA`, ship `plink_1UJgCyK5HjcCzJ5GkqfN7a38` https://buy.stripe.com/28E14o0kgbPQ3V1ag21RC0s , pickup `plink_1UJgCyK5HjcCzJ5GkT5o1Mmt` https://buy.stripe.com/aFaaEYaYUf22dvB1Jw1RC0t
+  - No.08 → `prod_VKKs3PNam8sOmF`, `price_1UJgD0K5HjcCzJ5GJSSrtgA5`, ship `plink_1UJgD0K5HjcCzJ5G59mzX8Bc` https://buy.stripe.com/3cIbJ21ok5rscrxbk61RC0u , pickup `plink_1UJgD1K5HjcCzJ5GhvSADVcu` https://buy.stripe.com/00waEY8QMcTU4Z587U1RC0v
+
 ## Status as of 2026-09-08 (end of session) — pushed live
 - **Copy revisions from Jill, all live** — commit `b770728`, pushed to `main`, verified via curl against `bouge.xyz`:
   - Hero headline "Luxury doesn't have to shout." / tagline "It simply has to be felt." → **"Simply Elegant. No Drama." / "Luxury on the skin."** — also updated `<title>`, meta description, OG/Twitter tags to match.

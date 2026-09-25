@@ -1087,6 +1087,48 @@ button {
 }
 
 /* ==========================================================================
+   Atelier Collection header + ingredients note (below product grids)
+   ========================================================================== */
+.atelier {
+  padding: var(--space-section-y) var(--space-page-x) 40px;
+  border-top: 1px solid rgba(28, 40, 48, 0.1);
+  text-align: center;
+}
+
+.atelier__label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-amber);
+}
+
+.atelier__heading {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(26px, 4vw, 34px);
+  margin: 8px 0 0;
+}
+
+.soap-note {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px var(--space-page-x);
+  text-align: center;
+}
+
+.soap-note__text {
+  font-size: 13px;
+  line-height: 1.8;
+  color: rgba(28, 40, 48, 0.6);
+  margin: 0 0 14px;
+}
+
+.soap-note__text:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
    Values strip
    ========================================================================== */
 .values {
