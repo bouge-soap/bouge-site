@@ -8,6 +8,7 @@ Jill's final rules (after real Canada Post quotes; ~$22-24 postage for a 3- OR 6
 - **Box of 6 is the ONLY shipped product: $95 CAD, "shipping included"** (Jill: never say "free shipping"). Kelowna pickup $75.
 - Box of 6 contents: LAVANDE, Eclipse, AZURE fixed + buyer picks 3 more (any bar, incl. Atelier, repeats allowed) or "Jill's choice", via 3 required dropdown custom_fields on the Payment Link. Choices live on the Checkout Session (visible in Dashboard payment details), NOT in the PI-triggered sale-alert email. No per-bar stock tracking — remove sold-out bars from dropdowns by hand (`custom_fields` is updatable).
 - **Box of 3 ($45) and all single bars ($16): Kelowna pickup only.** Box of 3 buyer picks all 3 bars (or Jill's choice) via dropdowns.
+- Dropdown option labels carry a short description (updated 2026-10-06, same option `value`s as before: jillschoice, azure, lavande, eclipse, atelier01-08). Core bars use shortened scent copy; Atelier labels are VISUAL descriptions from the photos (no scent info from Jill yet) — swap for Jill's scent lines if she sends them. Updating means resending the full `custom_fields` array on all 3 box links.
 - Caps: 20 on each new box link (owner's call, Jill didn't give a number).
 - No shipping line at all on the $95 link (just collects CA address). A $0 shipping rate `shr_1UNeVoK5HjcCzJ5GMBHgPfcQ` was tried and archived: Stripe labels $0 shipping as "Free".
 New Stripe objects (created 2026-10-06):
