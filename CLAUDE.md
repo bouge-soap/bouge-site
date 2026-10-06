@@ -2,6 +2,20 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Shipping/pricing overhaul — 2026-10-06 (built locally, NOT pushed yet)
+Jill's final rules (after real Canada Post quotes; ~$22-24 postage for a 3- OR 6-box, so small parcels lose money):
+- **Box of 6 is the ONLY shipped product: $95 CAD, "shipping included"** (Jill: never say "free shipping"). Kelowna pickup $75.
+- Box of 6 contents: LAVANDE, Eclipse, AZURE fixed + buyer picks 3 more (any bar, incl. Atelier, repeats allowed) or "Jill's choice", via 3 required dropdown custom_fields on the Payment Link. Choices live on the Checkout Session (visible in Dashboard payment details), NOT in the PI-triggered sale-alert email. No per-bar stock tracking — remove sold-out bars from dropdowns by hand (`custom_fields` is updatable).
+- **Box of 3 ($45) and all single bars ($16): Kelowna pickup only.** Box of 3 buyer picks all 3 bars (or Jill's choice) via dropdowns.
+- Caps: 20 on each new box link (owner's call, Jill didn't give a number).
+- No shipping line at all on the $95 link (just collects CA address). A $0 shipping rate `shr_1UNeVoK5HjcCzJ5GMBHgPfcQ` was tried and archived: Stripe labels $0 shipping as "Free".
+New Stripe objects (created 2026-10-06):
+  - Box of 6 shipped: price `price_1UNeVoK5HjcCzJ5GXkoJCPIK` ($95), link `plink_1UNeWDK5HjcCzJ5GCSXavbnw` https://buy.stripe.com/dRm5kEd72f223V1dse1RC0w
+  - Box of 6 pickup: price `price_1UNeVoK5HjcCzJ5Gc8bSDS0r` ($75), link `plink_1UNeWDK5HjcCzJ5GkO8QMDrr` https://buy.stripe.com/7sYbJ29UQbPQ1MT5ZM1RC0x
+  - Box of 3 pickup: existing $45 price, new link `plink_1UNeWEK5HjcCzJ5GtN6xXLYy` https://buy.stripe.com/8x27sM3ws8DEcrx87U1RC0y
+**At push time:** update box Product descriptions (still old "curated set" copy), then deactivate old links: 11 single-bar ship links (AZURE `plink_1U9UARK5HjcCzJ5GqmjWbOFl`, LAVANDE `plink_1U9Vn3K5HjcCzJ5GDnPIWXir`, Eclipse `plink_1U9W3EK5HjcCzJ5GgQ5omvHY`, Atelier 01-08 ship links listed below), Box-6 ship $85 `plink_1U9sqJK5HjcCzJ5GySkWDgXS`, Box-6 pickup $85 `plink_1UDDeyK5HjcCzJ5GK9HBIZWB`, Box-3 ship `plink_1U9sqJK5HjcCzJ5GPBS0zZVC`, Box-3 old pickup `plink_1UDDeVK5HjcCzJ5GwTc5MqQ1`.
+Site (local): single-bar cards pickup-only ("Local pickup in Kelowna only"), box card split into Box of 6 (`#bouge-box`) + Box of 3 cards, teaser box card → "$95 CAD — shipping included" / "Build Your Box". Box of 3 card reuses the 6-box photo (no 3-box photo yet).
+
 ## Pending as of 2026-09-25 — Atelier bars (waiting on Jill's names ↔ image #s)
 - Photos: HEIC in `~/Downloads/` — IMG_8089, 8102, 8120, 8128, 8175, 8178, 8182, 8184 (8184 sent twice, identical). Most shot sideways; rotate upright when cropping. Keep true colour, do not warm (owner rejected tinted version).
 - Decisions: line is spelled **Atelier**. $16 CAD like other bars, **15-unit cap** each, shipping + pickup links for each. Probably its own Atelier section (owner to confirm).
