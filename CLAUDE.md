@@ -2,6 +2,11 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Copy revisions from Jill — 2026-10-06, LIVE
+- AZURE description → "Fresh raspberry & lime meet cool mint — bright, clean, and beautifully unexpected." LAVANDE got its final period. **Eclipse renamed ECLIPSE** everywhere (card, alt text, box copy, Stripe Product name, box dropdown labels, box checkout "Your box includes…" text). Wholesale CTA heading → "Handmade in Kelowna, British Columbia, Canada."
+- Fixed a long-standing Stripe bug: AZURE/LAVANDE/ECLIPSE Product descriptions had been truncated to "Ingredients: Organic olive, coconut, castor oil " (an unencoded "&" in an Aug curl call cut the param). Now set to each bar's full scent description. **Always `--data-urlencode` (or Python urlencode) any Stripe text containing "&".**
+- Jill's AI also claimed the bar chooser wasn't built and the mailing list errors; both are false (chooser live and required; owner tested signup 2026-10-06 and it worked).
+
 ## Shipping/pricing overhaul — 2026-10-06 — LIVE (commit `ac7bd5a`)
 - **Done at push:** box Product descriptions updated in Stripe; all 15 old links below deactivated (not deleted) after confirming none were on the live site; live site has exactly 14 checkout links (11 single-bar pickup + 3 box links), all returning 200. Box checkouts open in a new tab; small italic "Choose your bars at checkout." note on both box cards.
 Jill's final rules (after real Canada Post quotes; ~$22-24 postage for a 3- OR 6-box, so small parcels lose money):
