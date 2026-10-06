@@ -2,6 +2,11 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Founder + story copy — 2026-10-06, LIVE
+- Founder section replaced with Jill's shorter rewrite: heading "I'm Jill." + "Founder & soap maker" subtitle kept; bold lead line (`.founder__paragraph--lead`) "I founded BOUGE, and I make every bar." then three paragraphs ending "Still made by me, in small batches, in Kelowna." The "don't have to be ordinary" line and the pull quote were removed per Jill (pull-quote CSS deleted). The 2026-08-28 founder-copy note further down is superseded.
+- Our story: removed the opener "Some things in life deserve to be made well."; now starts "BOUGE began with a simple search…".
+- Open question: the "Founder & soap maker" subtitle now repeats the lead line; kept since Jill didn't mention it.
+
 ## Copy revisions from Jill — 2026-10-06, LIVE
 - AZURE description → "Fresh raspberry & lime meet cool mint — bright, clean, and beautifully unexpected." LAVANDE got its final period. **Eclipse renamed ECLIPSE** everywhere (card, alt text, box copy, Stripe Product name, box dropdown labels, box checkout "Your box includes…" text). Wholesale CTA heading → "Handmade in Kelowna, British Columbia, Canada."
 - Fixed a long-standing Stripe bug: AZURE/LAVANDE/ECLIPSE Product descriptions had been truncated to "Ingredients: Organic olive, coconut, castor oil " (an unencoded "&" in an Aug curl call cut the param). Now set to each bar's full scent description. **Always `--data-urlencode` (or Python urlencode) any Stripe text containing "&".**
