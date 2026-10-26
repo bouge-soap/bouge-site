@@ -2,6 +2,12 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Values/blurb/wholesale copy from Jill — 2026-10-26, LIVE
+- Ingredients blurb (below Atelier grid) now ONE line: "Every BOUGE bar begins with a signature blend of the finest Italian olive oil, organic coconut and castor oils, and the finest shea butter." The old clays/charcoal line AND the Atelier "limited pours… full ingredients provided" paragraph were removed (Jill quoted both as the section to replace; easy to restore from git if she wanted the Atelier line kept).
+- Values row: block 1 "All Natural / No synthetics" → "100% Essential Oils / Phthalate & paraben free"; block 4 "Local / Made in BC" → "Made in Kelowna / British Columbia" (Jill: "not local if you're in Calgary or Toronto"). Blocks 2-3 unchanged.
+- Hero label "All natural · …" → "Natural · Carefully sourced · Small batch".
+- Wholesale CTA body → "Interested in carrying BOUGE in your shop? Send us an email at hello@bouge.xyz and we'll be in touch." (mailto link, `.cta__email`). No phone number exists, so email only. Mailing-list form below it unchanged.
+
 ## Founder + story copy — 2026-10-06, LIVE
 - Founder section replaced with Jill's shorter rewrite: heading "I'm Jill." + "Founder & soap maker" subtitle kept; bold lead line (`.founder__paragraph--lead`) "I founded BOUGE, and I make every bar." then three paragraphs ending "Still made by me, in small batches, in Kelowna." The "don't have to be ordinary" line and the pull quote were removed per Jill (pull-quote CSS deleted). The 2026-08-28 founder-copy note further down is superseded.
 - Our story: removed the opener "Some things in life deserve to be made well."; now starts "BOUGE began with a simple search…".

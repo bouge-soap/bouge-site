@@ -1247,6 +1247,16 @@ button {
   font-weight: 300;
 }
 
+.cta__email {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.cta__email:hover {
+  color: var(--color-amber);
+}
+
 /* ==========================================================================
    Footer
    ========================================================================== */
