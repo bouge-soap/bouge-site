@@ -4,7 +4,7 @@ Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
 ## Values/blurb/wholesale copy from Jill — 2026-10-26, LIVE
 - Ingredients blurb (below Atelier grid) now ONE line: "Every BOUGE bar begins with a signature blend of the finest Italian olive oil, organic coconut and castor oils, and the finest shea butter." The old clays/charcoal line AND the Atelier "limited pours… full ingredients provided" paragraph were removed (Jill quoted both as the section to replace; easy to restore from git if she wanted the Atelier line kept).
-- Values row: block 1 "All Natural / No synthetics" → "100% Essential Oils / Phthalate & paraben free"; block 4 "Local / Made in BC" → "Made in Kelowna / British Columbia" (Jill: "not local if you're in Calgary or Toronto"). Blocks 2-3 unchanged.
+- Values row: block 1 "All Natural / No synthetics" → "100% Essential Oils / Phthalate & paraben free" → **"Fragrance Oils / Phthalate & paraben free" (2026-10-26, Jill: current bars use fragrance oils; callout for certified essential-oil bars to be decided when they arrive)**; block 4 "Local / Made in BC" → "Made in Kelowna / British Columbia" (Jill: "not local if you're in Calgary or Toronto"). Blocks 2-3 unchanged.
 - Hero label "All natural · …" → "Natural · Carefully sourced · Small batch".
 - Wholesale CTA body → "Interested in carrying BOUGE in your shop? Send us an email at hello@bouge.xyz and we'll be in touch." (mailto link, `.cta__email`). No phone number exists, so email only. Mailing-list form below it unchanged.
 
