@@ -2,6 +2,11 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Box photo + Box of 6 pricing display — 2026-11-06, LIVE
+- Box of 3 now has its own photo `assets/images/product-box-3.jpg` (Jill's phone shot, calendula-petal filler, new round BOUGE card, square crop, no colour correction), on the site and on Stripe Product `prod_VADGIPI4c7IZcT`. Box of 6 and the Latest batch strip keep `product-bulk-box.jpg`.
+- Jill reprinted the box card: the old one said "pure essential oils" and "Organic olive, coconut & castor oils", conflicting with the site. The first three-bar photo showed the old card; don't use it.
+- Box of 6 card: new `.product-card__price-alt` line "or $75 with local pickup in Kelowna — you save $20"; buttons "Ship it · $95" / "Pick up · $75". Prices and links unchanged.
+
 ## Values/blurb/wholesale copy from Jill — 2026-10-26, LIVE
 - Ingredients blurb (below Atelier grid) now ONE line: "Every BOUGE bar begins with a signature blend of the finest Italian olive oil, organic coconut and castor oils, and the finest shea butter." The old clays/charcoal line AND the Atelier "limited pours… full ingredients provided" paragraph were removed (Jill quoted both as the section to replace; easy to restore from git if she wanted the Atelier line kept).
 - Values row: block 1 "All Natural / No synthetics" → "100% Essential Oils / Phthalate & paraben free" → **"Fragrance Oils / Phthalate & paraben free" (2026-10-26, Jill: current bars use fragrance oils; callout for certified essential-oil bars to be decided when they arrive)**; block 4 "Local / Made in BC" → "Made in Kelowna / British Columbia" (Jill: "not local if you're in Calgary or Toronto"). Blocks 2-3 unchanged.

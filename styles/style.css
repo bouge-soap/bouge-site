@@ -926,6 +926,12 @@ button {
   margin-top: 2px;
 }
 
+.product-card__price-alt {
+  font-size: 13px;
+  color: var(--color-slate);
+  margin-top: 4px;
+}
+
 .product-card__choose-note {
   font-size: 10.5px;
   font-style: italic;
