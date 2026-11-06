@@ -2,6 +2,9 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Olive pomace wording — 2026-11-06, LIVE
+- Jill: anywhere the site says olive oil must read "olive pomace (olive oil)". Changed the ingredients line below the Atelier grid ("finest Italian olive oil" → "olive pomace (olive oil)", "finest" dropped since pomace is a lower grade) and the AZURE/LAVANDE/ECLIPSE ingredient lists ("Organic olive, coconut, castor oil…" → "Olive pomace (olive oil), organic coconut, castor oil…"). Stripe `metadata.ingredients` on those 3 Products updated to match (also fixed its old "&" truncation). Assumed coconut and castor are still organic and pomace isn't; unconfirmed by Jill.
+
 ## Box photo + Box of 6 pricing display — 2026-11-06, LIVE
 - Box of 3 now has its own photo `assets/images/product-box-3.jpg` (Jill's phone shot, calendula-petal filler, new round BOUGE card, square crop, no colour correction), on the site and on Stripe Product `prod_VADGIPI4c7IZcT`. Box of 6 and the Latest batch strip keep `product-bulk-box.jpg`.
 - Jill reprinted the box card: the old one said "pure essential oils" and "Organic olive, coconut & castor oils", conflicting with the site. The first three-bar photo showed the old card; don't use it.
