@@ -2,6 +2,12 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Fair brief (Summerhill Nov 21-22) — 2026-11-15
+- **Olive wording corrected again (supersedes the 11-06 pomace note below):** AZURE, LAVANDE, ECLIPSE, Atelier #02/#07 and Atelier #9-15 = organic extra virgin olive oil. Only Atelier #16-19 = olive pomace. INCI is Sodium Olivate for all. Card ingredient lines now "Organic extra virgin olive oil, organic coconut, castor oil & shea butter, ..."; blurb is "olive oil (organic extra virgin, or olive pomace in select Atelier bars)" (Jill approved). Stripe `metadata.ingredients` on the 3 core Products updated to match.
+- **Sold Atelier bars:** No.01, 03, 04, 05, 06, 08. Kept with photos, moved below No.02/No.07, "Sold" tag + inert "Sold" button (`.product-card--sold`, `.product-card__sold-tag`). Their pickup links were deactivated in Stripe, and atelier01/03/04/05/06/08 were removed from the dropdowns on all 3 box links. No.02 and No.07 are still for sale.
+- **Ingredient pages built 2026-11-15** as folders `lavande/`, `eclipse/`, `atelier-{9,10,12,14,15,16,17,18,19}/index.html` + `styles/ingredients.css` (folders, not vercel.json cleanUrls, so /thankyou.html is unaffected). The lists come verbatim from Jill's `ingredient-pages-for-josh.md`, except that the Sodium Olivate bracket shows the grade ("organic extra virgin olive oil", or "olive pomace" on #16-19), per the brief. Not linked from the nav, and noindex. Held: #11 (waiting on the Voyageur sheet, then build from the same file). Skipped: #13 (out of the fair). #16's pink peppercorn INCI ("Schinus Terebinthifolia Fruit") is still unconfirmed.
+- After the fair: 138 g bar weight (placement TBD); footer essential-oils line already gone since 10-26.
+
 ## Olive pomace wording — 2026-11-06, LIVE
 - Jill: anywhere the site says olive oil must read "olive pomace (olive oil)". Changed the ingredients line below the Atelier grid ("finest Italian olive oil" → "olive pomace (olive oil)", "finest" dropped since pomace is a lower grade) and the AZURE/LAVANDE/ECLIPSE ingredient lists ("Organic olive, coconut, castor oil…" → "Olive pomace (olive oil), organic coconut, castor oil…"). Stripe `metadata.ingredients` on those 3 Products updated to match (also fixed its old "&" truncation). Assumed coconut and castor are still organic and pomace isn't; unconfirmed by Jill.
 

@@ -1025,6 +1025,27 @@ button {
   pointer-events: none;
 }
 
+/* Sold Atelier bars (2026-11-15) — photo stays up so the range shows,
+   muted slightly, with a small "Sold" tag. */
+.product-card__sold-tag {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  padding: 6px 14px;
+  background: var(--color-slate);
+  color: var(--color-bg);
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body), sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.product-card--sold .product-card__img {
+  opacity: 0.6;
+}
+
 .product-card__buy--disabled:hover {
   background: rgba(28, 40, 48, 0.12);
   transform: none;

@@ -1,0 +1,52 @@
+/* Ingredient pages (/lavande, /eclipse, /atelier-N) — 2026-11-15 */
+.nav__wordmark a { color: inherit; text-decoration: none; }
+.ing {
+  padding: var(--space-section-y) var(--space-page-x);
+  display: flex;
+  justify-content: center;
+}
+.ing__inner { width: 100%; max-width: 620px; }
+.ing__heading {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(34px, 6vw, 52px);
+  margin: 16px 0 6px;
+  color: var(--color-slate);
+}
+.ing__scent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--color-muted);
+  margin: 0;
+}
+.ing__list {
+  list-style: none;
+  padding: 0;
+  margin: 32px 0;
+  border-top: 1px solid rgba(28, 40, 48, 0.12);
+}
+.ing__list li {
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(28, 40, 48, 0.12);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--color-slate);
+}
+.ing__plain { color: var(--color-muted); }
+.ing__meta { font-size: 14px; color: var(--color-muted); margin: 0 0 6px; }
+.ing__link {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 32px;
+  background: var(--color-slate);
+  color: var(--color-bg);
+  text-decoration: none;
+  border-radius: var(--radius-pill);
+  font-family: var(--font-body), sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background 300ms var(--ease-smooth);
+}
+.ing__link:hover { background: var(--color-amber); }
