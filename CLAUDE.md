@@ -2,6 +2,20 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## New Atelier bars No.10-20 — 2026-11-16
+- Photos from Jill in `~/Downloads/atelierneedsposting/` (IMG_9413=#10, 9408=#11, 9417=#12, 9415=#13, 9407=#16, 9412=#17, 9406=#18, 9409=#19, 9405=#20; IMG_9410 is a duplicate of #18). Cropped square to 1400px, no colour correction, saved as `assets/images/product-atelier-NN.jpg`.
+- Built: #10, #12 and #16 (ready now), plus #17 (Dec 1), #18 (Dec 5), #19 (Dec 7) and #20 (Dec 14). Curing bars are pre-orders, with a "Ready for pickup in Kelowna from Dec X" note and a "Pre-order · Pick Up" button; their Stripe ToS text says the same. Cards show the scent plus an "Ingredients" link to /atelier-NN (#20 has no page or scent yet). Order: 02, 07, the new bars, then the sold ones.
+- Stripe: $16 CAD, pickup-only, cap 15 (a quantity, not a price; Jill misread it). Added to all 3 box dropdowns (values atelier10/12/16-20, with "(ready Dec X)" in the label).
+  - No.10 (Bergamot & Clary Sage, ready now) → `prod_VdunoxVOoVRz8K`, `price_1Uccy2K5HjcCzJ5Gd1wgISWp`, pickup `plink_1Uccy2K5HjcCzJ5GTB3txoh6` https://buy.stripe.com/aFa28s4Aw3jkajp87U1RC0z
+  - No.12 (Blackberry Bourbon, ready now) → `prod_Vdun4l3mxs9uiO`, `price_1Uccy4K5HjcCzJ5Gue6b95Xh`, pickup `plink_1Uccy4K5HjcCzJ5GoQyVggv9` https://buy.stripe.com/bJefZi7MI6vw2QXag21RC0A
+  - No.16 (Bergamot & Clary Sage, ready now) → `prod_VdunM3d28t0nYq`, `price_1Uccy5K5HjcCzJ5GxQ4HEJaP`, pickup `plink_1Uccy6K5HjcCzJ5GDQMA7nt6` https://buy.stripe.com/9B6eVe0kg4nobntewi1RC0B
+  - No.17 (Bergamot & Clary Sage, ready December 1) → `prod_VdundIjBodQTkL`, `price_1Uccy7K5HjcCzJ5GHztQnhJ9`, pickup `plink_1Uccy8K5HjcCzJ5GXac0mskb` https://buy.stripe.com/00wcN68QMg66dvBgEq1RC0C
+  - No.18 (Bergamot & Clary Sage, ready December 5) → `prod_VdunHTgggvECai`, `price_1Uccy9K5HjcCzJ5GaGjIN0A8`, pickup `plink_1UccyAK5HjcCzJ5GVHC41PHz` https://buy.stripe.com/8x24gA7MIcTU77d5ZM1RC0D
+  - No.19 (Bergamot & Clary Sage, ready December 7) → `prod_VdunD5JICh5F6g`, `price_1UccyBK5HjcCzJ5GYkoX4CuH`, pickup `plink_1UccyCK5HjcCzJ5GrAFikFDB` https://buy.stripe.com/7sY6oI1ok0783V1coa1RC0E
+  - No.20 (scent TBD, ready December 14) → `prod_VdunleY5QS4PsJ`, `price_1UccyDK5HjcCzJ5GjSjjRcVp`, pickup `plink_1UccyDK5HjcCzJ5GiEJpgZ8d` https://buy.stripe.com/00weVe2so6vwdvB1Jw1RC0F
+- **Held:** #11 (blue eucalyptus bar, photo cropped): waiting on Jill to confirm it goes on the shop. #13: kept off because its IFRA limit is exceeded; Jill hasn't confirmed either way. #9, #14 and #15 are gone, so not listed.
+- When a curing bar is ready: swap its note to "Local pickup in Kelowna only" and its button to "Pick Up in Kelowna" (optionally update the Stripe ToS text and dropdown label).
+
 ## Fair brief (Summerhill Nov 21-22) — 2026-11-15
 - **Olive wording corrected again (supersedes the 11-06 pomace note below):** AZURE, LAVANDE, ECLIPSE, Atelier #02/#07 and Atelier #9-15 = organic extra virgin olive oil. Only Atelier #16-19 = olive pomace. INCI is Sodium Olivate for all. Card ingredient lines now "Organic extra virgin olive oil, organic coconut, castor oil & shea butter, ..."; blurb is "olive oil (organic extra virgin, or olive pomace in select Atelier bars)" (Jill approved). Stripe `metadata.ingredients` on the 3 core Products updated to match.
 - **Sold Atelier bars:** No.01, 03, 04, 05, 06, 08. Kept with photos, moved below No.02/No.07, "Sold" tag + inert "Sold" button (`.product-card--sold`, `.product-card__sold-tag`). Their pickup links were deactivated in Stripe, and atelier01/03/04/05/06/08 were removed from the dropdowns on all 3 box links. No.02 and No.07 are still for sale.

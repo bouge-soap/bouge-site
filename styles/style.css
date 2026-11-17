@@ -1346,3 +1346,17 @@ button {
     text-align: left;
   }
 }
+
+/* Link to a bar's full ingredient page (Atelier cards, 2026-11-16) */
+.product-card__ingredients-link {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-slate);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.7;
+}
+.product-card__ingredients-link:hover { color: var(--color-amber); opacity: 1; }
