@@ -2,6 +2,9 @@
 
 Small-batch natural soap brand. Founder: Jill. Based in Kelowna, BC, Canada.
 
+## Full story on homepage — 2026-11-18
+- Jill's full story (via Jack, v2 with "Mediterranean") replaced the old one-line "BOUGE began with a simple search…" in `#story`, word for word, em dashes kept since they're her words. First line "I never set out to sell soap." uses the big `.story__quote` style; the other four paragraphs use new `.story__paragraph`. The short fair-card version is NOT for the website.
+
 ## New Atelier bars No.10-20 — 2026-11-16
 - Photos from Jill in `~/Downloads/atelierneedsposting/` (IMG_9413=#10, 9408=#11, 9417=#12, 9415=#13, 9407=#16, 9412=#17, 9406=#18, 9409=#19, 9405=#20; IMG_9410 is a duplicate of #18). Cropped square to 1400px, no colour correction, saved as `assets/images/product-atelier-NN.jpg`.
 - Built: #10, #12 and #16 (ready now), plus #17 (Dec 1), #18 (Dec 5), #19 (Dec 7) and #20 (Dec 14). Curing bars are pre-orders, with a "Ready for pickup in Kelowna from Dec X" note and a "Pre-order · Pick Up" button; their Stripe ToS text says the same. Cards show the scent plus an "Ingredients" link to /atelier-NN (#20 has no page or scent yet). Order: 02, 07, the new bars, then the sold ones.

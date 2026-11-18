@@ -599,6 +599,17 @@ button {
   font-weight: 400;
 }
 
+.story__paragraph {
+  font-family: var(--font-display);
+  font-size: clamp(17px, 2.2vw, 20px);
+  line-height: 1.6;
+  margin: 18px 0 0;
+}
+
+.story__quote + .story__paragraph {
+  margin-top: 26px;
+}
+
 .story__media {
   overflow: hidden;
   height: 320px;
